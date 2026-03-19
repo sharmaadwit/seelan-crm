@@ -1,8 +1,8 @@
 <?php
-$host = 'localhost';
-$dbname = 'medical_dashboard'; // Ensure this database exists in your MySQL server
-$username = 'phpmyadmin'; 
-$password = '0]KLn{XbLuNn$^'; 
+$host = 'mysql.railway.internal';
+$dbname = 'railway'; // Ensure this database exists in your MySQL server
+$username = 'root'; 
+$password = 'kcOQBchCBbxDWHPzEGOVsQGrBJZMbkrG'; 
 
 try {
     $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $username, $password);
