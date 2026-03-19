@@ -1,10 +1,10 @@
 <?php
 
-$host = "autorack.proxy.rlwy.net";
-$port = 50421;
+$host = "mysql.railway.internal";
+$port = 3306;
 $dbname = "railway";
 $username = "root";
-$password = "kcOQBchCBbxDWHPzEGOVsQGrBduwjhwrG";
+$password = "kcOQBchCBbxDWHPzEGOVsQGrBJZMbkrG";
 
 try {
     $pdo = new PDO(
@@ -14,12 +14,9 @@ try {
     );
 
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 
     echo "✅ DB Connected";
 
 } catch (PDOException $e) {
     die("❌ Error: " . $e->getMessage());
 }
-
-?>
