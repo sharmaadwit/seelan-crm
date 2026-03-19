@@ -1,10 +1,10 @@
 <?php
 
-$host = getenv('MYSQLHOST');
-$port = getenv('MYSQLPORT');
-$dbname = getenv('MYSQLDATABASE');
-$username = getenv('MYSQLUSER');
-$password = getenv('MYSQLPASSWORD');
+$host = "autorack.proxy.rlwy.net";
+$port = 50421;
+$dbname = "railway";
+$username = "root";
+$password = "kcOQBchCBbxDWHPzEGOVsQGrBduwjhwrG";
 
 try {
     $pdo = new PDO(
@@ -13,8 +13,13 @@ try {
         $password
     );
 
-    echo "✅ Connected successfully";
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+
+    echo "✅ DB Connected";
 
 } catch (PDOException $e) {
-    echo "❌ Error: " . $e->getMessage();
+    die("❌ Error: " . $e->getMessage());
 }
+
+?>
