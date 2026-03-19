@@ -15,8 +15,6 @@ try {
 
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    echo "✅ DB Connected";
-
 } catch (PDOException $e) {
-    die("❌ Error: " . $e->getMessage());
+    die("DB Error: " . $e->getMessage());
 }
